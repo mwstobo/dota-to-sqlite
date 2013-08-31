@@ -15,7 +15,7 @@ def get_cfg(cfg_filename, cfg_parameter):
 		return match.group(1)
 
 def gen_match_ids(account_id):
-	print "Generating match id's for account {0}...".format(account_id)
+	print "Generating match ids for account {0}...".format(account_id)
 	key = get_cfg(cfg_filename, "api-key")
 	last_date = time.time()
 	remaining, results = 1, 1
