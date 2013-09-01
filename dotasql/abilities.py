@@ -1,6 +1,8 @@
 import sqlite3
+import tools
 
-conn = sqlite3.connect("matches")
+account_id = tools.get_cfg(tools.cfg_filename, "account-id")
+conn = sqlite3.connect("matches_{0}".format(account_id))
 c = conn.cursor()
 
 def _create_tables():

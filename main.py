@@ -1,7 +1,6 @@
-from dotasql import tools
+from dotasql import net, tools
 
-cfg_filename = "dotasql.cfg"
-account_id = tools.get_cfg(cfg_filename, "account-id")
+account_id = tools.get_cfg(tools.cfg_filename, "account-id")
 
 if __name__ == "__main__":
-	tools.index_matches(account_id)
+	net.index_matches(account_id)
