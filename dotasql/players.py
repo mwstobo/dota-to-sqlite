@@ -32,7 +32,8 @@ def _create_tables():
 			hero_damage INTEGER,
 			tower_damage INTEGER,
 			hero_healing INTEGER,
-			level INTEGER
+			level INTEGER,
+			PRIMARY KEY(match_id, player_slot)
 		)
 	""")
 	conn.commit()

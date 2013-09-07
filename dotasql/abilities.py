@@ -60,7 +60,8 @@ def _create_tables():
 			ability_23 INTEGER,
 			ability_23_time INTEGER,
 			ability_24 INTEGER,
-			ability_24_time INTEGER
+			ability_24_time INTEGER,
+			PRIMARY KEY(match_id, player_slot)
 		)
 	""")
 	conn.commit()

@@ -10,7 +10,7 @@ c = conn.cursor()
 def _create_tables():
 	c.execute("""
 		CREATE TABLE matches (
-			id INTEGER PRIMARY KEY,
+			id INTEGER,
 			radiant_win INTEGER,
 			duration INTEGER,
 			start_time INTEGER,
@@ -27,16 +27,7 @@ def _create_tables():
 			positive_votes INTEGER,
 			negative_votes INTEGER,
 			game_mode INTEGER,
-			player_0 INTEGER,
-			player_1 INTEGER,
-			player_2 INTEGER,
-			player_3 INTEGER,
-			player_4 INTEGER,
-			player_128 INTEGER,
-			player_129 INTEGER,
-			player_130 INTEGER,
-			player_131 INTEGER,
-			player_132 INTEGER
+			PRIMARY KEY(id)
 		)
 	""")
 	conn.commit()
@@ -70,22 +61,16 @@ def add_match(info):
 	positive_votes = info['positive_votes']
 	negative_votes = info['negative_votes']
 	game_mode = info['game_mode']
-	player_ids	= []
 	for player in info['players']:
-		player_ids.append(player['account_id'])
 		players.add_player(player, id)
-	while len(player_ids) < 10:
-		player_ids.append(0)
 	data = (id, radiant_win, duration, start_time, seq_num, radiant_tower,
 			dire_tower, radiant_barracks, dire_barracks, cluster, first_blood,
 			lobby_type, human_player_ids, leagueid,	positive_votes,
-			negative_votes, game_mode, player_ids[0], player_ids[1],
-			player_ids[2], player_ids[3], player_ids[4], player_ids[5],
-			player_ids[6], player_ids[7], player_ids[8], player_ids[9])
+			negative_votes, game_mode)
 	c.execute("""
 		INSERT INTO matches VALUES (
 			?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
-			?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+			?, ?, ?, ?
 		)
 	""", data)
 	conn.commit()
