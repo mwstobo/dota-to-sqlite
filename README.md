@@ -21,7 +21,7 @@ The best place to find your proper account id for the API is [DotaBuff]
 (http://dotabuff.com). Visit your DotaBuff profile and look at the URL.
 The number after "players" is your 32-bit account id.
 * From the command line, run `python main.py`. The output will be placed in a
-file called matches_<your-account-id>.
+file called matches_\<your-account-id\>.
 
 Data structure
 -------------------------
