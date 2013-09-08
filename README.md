@@ -30,9 +30,7 @@ The data is structured in three tables: matches, players, and abilities.
 **matches**
 
 The matches table holds data specific to each match. Things like match id,
-start time, when first blood happened, etc. It also holds a list of account
-ids showing which players where a part of the match. If fewer than 10 players
-were part of the match, the account id field will be filled with a 0.
+start time, when first blood happened, etc.
 
 **players**
 
