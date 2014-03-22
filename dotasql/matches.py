@@ -7,7 +7,7 @@ db = Database()
 
 def add_abilities(info, match_id):
     if type(info) is not dict:
-        raise TypeErorr("Excepted paramater to be dict!")
+        raise TypeError("Excepted paramater to be dict!")
     values = []
     values.append(match_id)
     values.append(info['account_id'])
@@ -30,7 +30,7 @@ def add_abilities(info, match_id):
 
 def add_player(info, match_id):
     if type(info) is not dict:
-        raise TypeErorr("Excepted paramater to be dict!")
+        raise TypeError("Excepted paramater to be dict!")
     values = []
     values.append(match_id)
     values.append(info['account_id'])
@@ -61,7 +61,7 @@ def add_player(info, match_id):
 
 def add_match(info):
     if type(info) is not dict:
-        raise TypeErorr("Excepted paramater to be dict!")
+        raise TypeError("Excepted paramater to be dict!")
     values = []
     values.append(info['match_id'])
     values.append(int(info['radiant_win']))
