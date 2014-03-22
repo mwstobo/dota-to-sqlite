@@ -1,7 +1,4 @@
-import sqlite3
-import logging
-import tools
-from database import *
+from dotasql.database import Database
 
 db = Database()
 
@@ -84,9 +81,9 @@ def add_match(info):
         add_player(player, info['match_id'])
     db.insert("matches", tuple(values))
 
-def indexed(id):
+def indexed(match_id):
     c = db.db.cursor()
-    c.execute("SELECT * FROM matches WHERE id=?", (id,))
+    c.execute("SELECT * FROM matches WHERE id=?", (match_id,))
     if c.fetchone() == None:
         return False
     else:

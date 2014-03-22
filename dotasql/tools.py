@@ -2,7 +2,7 @@ import re
 
 cfg_filename = "dotasql.cfg"
 
-def get_cfg(cfg_filename, cfg_parameter):
+def get_cfg(cfg_parameter):
     cfg_file = open(cfg_filename, "r").read()
     match = re.search("{0}=(.*)".format(cfg_parameter), cfg_file)
     if match == None:

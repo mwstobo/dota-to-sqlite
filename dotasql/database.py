@@ -4,7 +4,7 @@ import dotasql.tools
 
 class Database(object):
     def __init__(self):
-        account_id = dotasql.tools.get_cfg(dotasql.tools.cfg_filename, "account-id")
+        account_id = dotasql.tools.get_cfg("account-id")
         db_file = "matches_{0}".format(account_id)
         db_exists = os.path.exists(db_file)
         self.db = sqlite3.connect(db_file)
